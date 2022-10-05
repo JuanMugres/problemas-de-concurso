@@ -26,11 +26,12 @@ def truco():
 
     numeros_mezclados = mezclar()
     print(numeros_mezclados)
-    reacomodo = [[],[],[]]
     seleccion: int
 
     #aqui empieza lo chido
     for i in range(3):
+        reacomodo = [[],[],[]]
+
         for j, fila in zip(range(3), numeros_mezclados):
             print(f'{j+1}\t{fila}\n')
 
@@ -51,10 +52,10 @@ def truco():
 
         print(temp) 
         for k in range(7):
-            for l in range(3):
-                reacomodo[l][k] = temp[temp_indx]
+            for l in reacomodo:
+                l.append(temp[temp_indx])
                 temp_indx+=1
-
+        print(reacomodo)
         numeros_mezclados = reacomodo
 
     print(f'Su numero es: {numeros_mezclados[1][3]}')
